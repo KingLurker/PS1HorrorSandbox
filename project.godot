@@ -14,6 +14,14 @@ config/name="Sandbox"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=320
+window/size/viewport_height=240
+window/size/mode=3
+window/size/borderless=true
+window/stretch/mode="viewport"
+
 [input]
 
 MoveLeft={
@@ -55,3 +63,8 @@ Crouch={
 [physics]
 
 3d/default_gravity=15.0
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+anti_aliasing/screen_space_roughness_limiter/enabled=false

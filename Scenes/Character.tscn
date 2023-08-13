@@ -55,6 +55,34 @@ tracks/3/keys = {
 "values": [false, true]
 }
 
+[sub_resource type="Animation" id="Animation_asvcy"]
+resource_name = "FlashlightOn"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3d/SpotLight3D:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.1, -0.25, 0, 0.25, 0, 1.5, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 12.528, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4)
+}
+
+[sub_resource type="Animation" id="Animation_t41wu"]
+resource_name = "Flashlightoff"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3d/SpotLight3D:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(3, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.1)
+}
+
 [sub_resource type="Animation" id="Animation_bkaf8"]
 length = 0.001
 tracks/0/type = "bezier"
@@ -162,36 +190,8 @@ tracks/3/keys = {
 "values": [true, false]
 }
 
-[sub_resource type="Animation" id="Animation_asvcy"]
-resource_name = "FlashlightOn"
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera3d/SpotLight3D:light_energy")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.1, -0.25, 0, 0.25, 0, 1.5, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 12.528, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4)
-}
-
 [sub_resource type="Animation" id="Animation_xou2g"]
 resource_name = "new_animation"
-
-[sub_resource type="Animation" id="Animation_t41wu"]
-resource_name = "Flashlightoff"
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera3d/SpotLight3D:light_energy")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(3, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.1)
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wlw4q"]
 _data = {
@@ -224,10 +224,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7041, 0)
 [node name="SpotLight3D" type="SpotLight3D" parent="Camera3d"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.152926, -0.710085)
 light_energy = 0.0
-spot_range = 10.2
-spot_attenuation = 0.420448
-spot_angle = 14.14
-spot_angle_attenuation = 6.49801
+light_volumetric_fog_energy = 3.895
+shadow_enabled = true
+shadow_blur = 4.232
+distance_fade_enabled = true
+distance_fade_shadow = 91.37
+distance_fade_length = 175.49
+spot_range = 24.353
+spot_attenuation = 0.659753
+spot_angle = 23.23
+spot_angle_attenuation = 1.90733
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
