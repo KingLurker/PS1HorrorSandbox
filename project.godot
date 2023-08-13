@@ -68,3 +68,10 @@ Crouch={
 
 textures/canvas_textures/default_texture_filter=0
 anti_aliasing/screen_space_roughness_limiter/enabled=false
+
+[shader_globals]
+
+precision_multiplier={
+"type": "float",
+"value": 0.0
+}

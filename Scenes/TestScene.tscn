@@ -1,6 +1,127 @@
-[gd_scene load_steps=2 format=3 uid="uid://lubp6i3f33wl"]
+[gd_scene load_steps=11 format=3 uid="uid://lubp6i3f33wl"]
 
 [ext_resource type="PackedScene" uid="uid://dhmmayvoslvey" path="res://Scenes/Character.tscn" id="1_01svf"]
+
+[sub_resource type="Gradient" id="Gradient_77l1m"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_g018c"]
+
+[sub_resource type="NoiseTexture3D" id="NoiseTexture3D_4oa8u"]
+resource_local_to_scene = true
+color_ramp = SubResource("Gradient_77l1m")
+noise = SubResource("FastNoiseLite_g018c")
+
+[sub_resource type="FogMaterial" id="FogMaterial_r6mxn"]
+resource_local_to_scene = true
+density = 0.4018
+albedo = Color(0.392157, 0.392157, 0.392157, 1)
+height_falloff = 3.01127
+edge_fade = 1.2996
+density_texture = SubResource("NoiseTexture3D_4oa8u")
+
+[sub_resource type="Environment" id="Environment_a00dp"]
+background_mode = 5
+ssr_enabled = true
+ssao_enabled = true
+ssao_radius = 4.53
+ssil_enabled = true
+ssil_radius = 9.71
+sdfgi_enabled = true
+sdfgi_use_occlusion = true
+sdfgi_read_sky_light = false
+sdfgi_bounce_feedback = 0.71
+sdfgi_cascades = 8
+sdfgi_min_cell_size = 0.01
+sdfgi_y_scale = 0
+fog_enabled = true
+fog_light_color = Color(0.160784, 0.176471, 0.203922, 1)
+fog_light_energy = 0.0
+fog_density = 0.2477
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0
+volumetric_fog_gi_inject = 0.0
+
+[sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_tapxc"]
+
+[sub_resource type="Animation" id="Animation_kohir"]
+resource_name = "moving light"
+length = 25.0
+step = 0.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OmniLight3D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(22.7579, -0.25, 0, 0.25, 0, 22.7579, -0.25, 0, 0.25, 0, 5.93544, -0.25, 0, 0.25, 0, -1.85809, -0.25, 0, 0.25, 0, -3.73773, -0.25, 0, 0.25, 0, 1.94652, -0.25, 0, 0.25, 0, 2.88914, -0.25, 0, 0.25, 0, 20.5182, -0.25, 0, 0.25, 0, 25.2147, -0.25, 0, 0.25, 0, 22.7579, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 4, 8.03, 9.52, 11.2201, 12.62, 14.27, 18.03, 19.9156, 25.0229)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("OmniLight3D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(7.14054, -0.25, 0, 0.25, 0, 1.23782, -0.25, 0, 0.25, 0, 1.97972, -0.25, 0, 0.25, 0, 1.97972, -0.25, 0, 0.25, 0, 1.97972, -0.25, 0, 0.25, 0, 0.776592, -0.25, 0, 0.25, 0, 0.776592, -0.25, 0, 0.25, 0, 0.776592, -0.25, 0, 0.25, 0, 3.12628, -0.25, 0, 0.25, 0, 7.13817, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 4, 8.03, 9.52, 11.2201, 12.62, 14.27, 18.03, 19.9156, 25.0229)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("OmniLight3D:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(10.8539, -0.25, 0, 0.25, 0, 10.8539, -0.25, 0, 0.25, 0, 26.6407, -0.25, 0, 0.25, 0, 26.6415, -0.25, 0, 0.25, 0, 6.85055, -0.25, 0, 0.25, 0, 6.48455, -0.25, 0, 0.25, 0, -5.02689, -0.25, 0, 0.25, 0, -5.02689, -0.25, 0, 0.25, 0, -5.02689, -0.25, 0, 0.25, 0, 10.8539, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 4, 8.03, 9.52, 11.2201, 12.62, 14.27, 18.03, 19.9156, 25.0229)
+}
+
+[sub_resource type="Animation" id="Animation_8lhsl"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OmniLight3D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(22.7579, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("OmniLight3D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(7.14054, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("OmniLight3D:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(10.8539, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ed4kt"]
+_data = {
+"RESET": SubResource("Animation_8lhsl"),
+"moving light": SubResource("Animation_kohir")
+}
 
 [node name="Node3D" type="Node3D"]
 
@@ -58,10 +179,20 @@ size = Vector3(90.1493, 0.326291, 69.3072)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.238531, 0.336011, 0.254364)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.74717, 0, -5.10765)
-light_energy = 4.505
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.7579, 7.14054, 10.8539)
+light_color = Color(0.458824, 0.00392157, 0.756863, 1)
+light_energy = 16.0
+light_indirect_energy = 16.0
+light_volumetric_fog_energy = 16.0
+light_size = 0.182
+light_specular = 2.116
 shadow_enabled = true
 distance_fade_enabled = true
+distance_fade_begin = 749.26
+distance_fade_shadow = 1142.87
+distance_fade_length = 946.23
+omni_range = 20.858
+omni_attenuation = 1e-05
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.86253, 0, 14.4634)
@@ -107,3 +238,17 @@ size = Vector3(1, 4.06766, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.8352, -1.27324, 17.5061)
 use_collision = true
 size = Vector3(1, 4.06766, 1)
+
+[node name="FogVolume" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.1615, 1.09225, 0)
+shape = 4
+material = SubResource("FogMaterial_r6mxn")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_a00dp")
+camera_attributes = SubResource("CameraAttributesPhysical_tapxc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ed4kt")
+}
